@@ -1,1 +1,77 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    
+    <title>Frontend Mentor | Conference ticket generator</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+
+  <div id = "form" style ="display: block">
+        <h1>Your Journey To Coding Conf <br> 2025 Starts Here!</h1>
+        <p class = "midp">Secure your spot at next year's biggest coding conference.</p>     
+
+        <div>
+        <form action="">
+                <label for="avatar">Upload Avatar</label> <br>
+                <input type ="file" id ="avatar" name = "avatar" accept = ".jpg, .jpeg, .png" required>
+                <p class="note">Upload a JPG or PNG image, max size: 500KB.</p>
+        
+                <label for = "fullname">Full Name </label> <br>
+                <input type = "text" name ="fullname" id = "fullname" required>
+
+                <br>
+                <label for ="gsmail">Email Address</label> <br>
+                <input type = "email" name ="gmail" id ="gmail" placeholder = "JuanDelaCruz@gmail.com" required>
+
+                <br>
+                <label for ="github">Github Username</label> <br>
+                <input type = "text" name ="github" id ="github" placeholder = "example123" required>
+
+                <br>
+                <button type ="button" onclick="generateTicket()">Generate My Ticket</button>
+          </div>
+        </form>
+  </div>
+
+  <div id = "ticket" style ="display: none">
+        <h1> Congrats, <span id ="displayfullname"> </span>! <br> Your ticket is ready.</h1>
+        <p class = "pmid">We've emailed your ticket to <br> <span id="displayemail"></span> and will send updates in <br>the run up to the event.</p>
+
+        <div class="ticket-details">
+              <h2>Coding Conf</h2>
+              <p class ="noteticket">Jan 31, 2025 / Austin, TX</p>
+              <h2><span id ="displayfullname2"> </span> <br></h2>
+                  <p class = "noteticket" style= "font-size: 12px; margin-top: 3px;">@<span id ="displaygithub"></span></p>
+         
+          </div>
+
+  </div>
+
+  <script>
+      function generateTicket(){
+        var fullname = document.getElementById("fullname").value
+        var gmail = document.getElementById("gmail").value
+        var github = document.getElementById("github").value
+
+        document.getElementById("form").style.display="none";
+        document.getElementById("ticket").style.display="block";
+
+        document.getElementById("displayfullname").innerText = fullname;
+        document.getElementById("displayfullname2").innerText = fullname;
+        document.getElementById("displayemail").innerText = gmail;
+        document.getElementById("displaygithub").innerText = github;
+        
+        
+        
+      }
+  </script>
+    
+  </body>
+  </html>
 
